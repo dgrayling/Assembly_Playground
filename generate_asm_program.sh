@@ -10,6 +10,6 @@ fi
 
 cp $1 asm_program.s
 cp $2 c_wrapper.c
-make clean && make C_WRAPPER=./c_wrapper.c dist/asm_program
+make clean && make dist/asm_program
 
 
