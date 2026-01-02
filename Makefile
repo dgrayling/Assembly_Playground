@@ -1,8 +1,8 @@
-dist/asm_program: dist/asm_program.o c_wrapper.c
-	clang -g -o dist/asm_program c_wrapper.c dist/asm_program.o
+square: dist/square.o c_wrapper.c
+	clang -g -o dist/square c_wrapper.c dist/square.o
 
-dist/asm_program.o: asm_program.s | dist
-	as -g -o dist/asm_program.o asm_program.s
+dist/square.o: assembly_programs/square.s | dist
+	as -g -o dist/square.o assembly_programs/square.s
 
 dist:
 	@mkdir -p dist
