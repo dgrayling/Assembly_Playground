@@ -8,8 +8,8 @@ if [ $# -ne 2 ]; then
     exit 1
 fi
 
-cp $1 asm_program_builder/asm_program.s
-cp $2 asm_program_builder/c_wrapper.c
-$(cd asm_program_builder && make clean && make C_WRAPPER=./c_wrapper.c dist/asm_program)
+cp $1 asm_program.s
+cp $2 c_wrapper.c
+make clean && make C_WRAPPER=./c_wrapper.c dist/asm_program
 
-find ./asm_program_builder/dist -maxdepth 1 -type f ! -name "*.*" -exec cp {} ./ \;
+
